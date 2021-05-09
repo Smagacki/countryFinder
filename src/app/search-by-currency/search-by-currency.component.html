@@ -1,0 +1,19 @@
+<div class="uk-background-default uk-border-rounded uk-padding">
+  <button routerLink="/search" class="uk-icon-button" uk-icon="reply"></button>
+  <h2 class="uk-heading-small uk-margin-remove-top">Search countries by currency</h2>
+  <div class="input">
+    <form [formGroup]="searchForm">
+      <div class="uk-flex uk-flex-between">
+        <input type="text" maxlength="3" formControlName="currencies" class="uk-input uk-border-rounded uk" placeholder="enter text here"
+          [ngClass]="{'is-invalid': searchForm.get('currencies').touched}"
+          pattern="[a-zA-Z]{3,3}">
+        <button (click)="getCountryByCurrency()" type="button"
+          class="uk-button uk-button-primary uk-border-rounded uk-align-left uk-margin-remove-bottom">Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="uk-flex uk-flex-column">
+    <app-result *ngFor="let country of countryList" [country]="country"></app-result>
+  </div>
+</div>

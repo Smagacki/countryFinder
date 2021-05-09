@@ -1,0 +1,13 @@
+.country-name {
+  font-size: 50px;
+  margin: 10px;
+}
+
+.country-flag {
+  width: 150px;
+  margin: 10px;
+}
+
+.details {
+  font-size: 20px;
+}

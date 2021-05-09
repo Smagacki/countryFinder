@@ -1,0 +1,23 @@
+<div *ngFor="let country of countryDetails" class="main-contener uk-container-expand uk-height-viewport uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-background-muted">
+  <div class="uk-flex uk-flex-between country-header">
+    <div class="country-name">{{country.name}}</div>
+    <div class="country-flag"><img [src]="country.flag" [alt]="country.name"></div>
+  </div>
+  <div class="details">
+    <p><strong>Domain:</strong> {{country.topLevelDomain}}</p>
+    <p><strong>Capital:</strong> {{country.capital}}</p>
+    <p><strong>Region:</strong> {{country.region}}</p>
+    <p><strong>Subregion:</strong> {{country.subregion}}</p>
+    <p><strong>Population:</strong> {{country.population}}</p>
+    <p><strong>Area:</strong> {{country.area}}</p>
+    <p><strong>Timezones:</strong> {{country.timezones}}</p>
+    <p><strong>Borders:</strong> {{country.borders}}</p>
+    <p><strong>Currencies:</strong>
+      <span *ngFor="let currency of country.currencies"> {{currency.code}}</span>
+    </p>
+    <p><strong>Languages:</strong>
+      <span *ngFor="let language of country.languages"> {{language.name}}</span>
+    </p>
+  </div>
+  <button routerLink="/search" class="uk-icon-button" uk-icon="reply"></button>
+</div>
